@@ -1,14 +1,15 @@
 import express, { Application } from 'express';
 import healthRoutes from './routes/health.routes';
-import { config } from './config/env';
+import authRoutes from './routes/auth.routes';
+import shortenerRoutes from './routes/shortener.routes';
+import { errorHandler } from './middlewares/errorHandler.middleware';
 
 const app: Application = express();
 
 app.use(express.json());
 app.use('/', healthRoutes);
-
-app.listen(config.port, () => {
-  console.log(`Server running on port ${config.port}`);
-});
+app.use('/', authRoutes);
+app.use('/', shortenerRoutes);
+app.use(errorHandler);
 
 export default app;
