@@ -37,7 +37,7 @@ Node.js, TypeScript, Express, PostgreSQL, Redis, Docker, Jest, GitHub Actions
 ## Running locally
 
 \`\`\`bash
-git clone https://github.com/YOUR-USERNAME/url-shortener.git
+git clone https://github.com/priyal2905/url-shortener.git
 cd url-shortener
 cp .env.example .env
 docker compose up --build
